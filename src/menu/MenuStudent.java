@@ -1,6 +1,6 @@
 package menu;
 
-import login.LoginManager;
+import manager.ComplaintManager;
 import manager.StudentManager;
 
 import java.util.Scanner;
@@ -9,10 +9,14 @@ public class MenuStudent {
     public static void menu2() {
         Scanner scanner = new Scanner(System.in);
         StudentManager studentManager = new StudentManager();
+        ComplaintManager complaintManager = new ComplaintManager();
+
         while (true) {
             System.out.println("Quản lý học sinh");
             System.out.println("1. Hiển thị score");
-            System.out.println("2. Thoát");
+            System.out.println("2. Khiếu nại ( hoặc đề xuất hoạt động)");
+            System.out.println("3. Thoát");
+
             int choice = 0;
             while (true) {
                 try {
@@ -25,9 +29,12 @@ public class MenuStudent {
             }
             switch (choice){
                 case 1:
-                    studentManager.getScores();
+                    studentManager.display();
                     break;
                 case 2:
+                    complaintManager.submitComplaint();
+                    break;
+                case 3:
                     return;
             }
         }

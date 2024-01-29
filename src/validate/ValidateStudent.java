@@ -22,7 +22,13 @@ public class ValidateStudent {
         while (true) {
             try {
                 System.out.println("Nhập điểmt toán");
-                return Double.parseDouble(scanner.nextLine());
+                double diemToan = Double.parseDouble(scanner.nextLine());
+
+                if (diemToan >= 0 && diemToan <= 10) {
+                    return diemToan;
+                } else {
+                    System.err.println("Điểm không hợp lệ. Vui lòng nhập lại.");
+                }
             } catch (Exception e) {
                 System.err.println("Đây k là score");
             }
@@ -33,7 +39,13 @@ public class ValidateStudent {
         while (true) {
             try {
                 System.out.println("Nhập điểmt ly");
-                return Double.parseDouble(scanner.nextLine());
+                double diemLy = Double.parseDouble(scanner.nextLine());
+
+                if (diemLy >= 0 && diemLy <= 10) {
+                    return diemLy;
+                } else {
+                    System.err.println("Điểm không hợp lệ. Vui lòng nhập lại.");
+                }
             } catch (Exception e) {
                 System.err.println("Đây k là score");
             }
@@ -44,7 +56,13 @@ public class ValidateStudent {
         while (true) {
             try {
                 System.out.println("Nhập điểmt hoa");
-                return Double.parseDouble(scanner.nextLine());
+                double diemHoa = Double.parseDouble(scanner.nextLine());
+
+                if (diemHoa >= 0 && diemHoa <= 10) {
+                    return diemHoa;
+                } else {
+                    System.err.println("Điểm không hợp lệ. Vui lòng nhập lại.");
+                }
             } catch (Exception e) {
                 System.err.println("Đây k là score");
             }

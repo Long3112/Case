@@ -1,6 +1,8 @@
 package manager;
 
 import file.FileS;
+import login.LoginManager;
+import model.Complaint;
 import model.Login;
 import model.Student;
 import validate.ValidateStudent;
@@ -9,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class StudentManager {
+
+public class StudentManager extends LoginManager {
     List<Student> students = new ArrayList<>();
-    List<Login> logins = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -66,6 +68,7 @@ public class StudentManager {
 
 
     }
+
     public void averageScore() {
         try {
             boolean input = true;
@@ -100,6 +103,7 @@ public class StudentManager {
             e.printStackTrace();
         }
     }
+
     public void highestScore() {
         try {
             double maxScore = 0;
@@ -142,17 +146,10 @@ public class StudentManager {
         }
         return -1;
     }
-    public void getScores() {
-        for (Student s : students) {
-            for (Login login : logins) {
-                if (s.getName().equals(login.getStudentUsernames())) {
-                    System.out.println("Điểm Toán: " + s.getToan());
-                    System.out.println("Điểm Lý: " + s.getLy());
-                    System.out.println("Điểm Hóa: " + s.getHoa());
-                }
-            }
-        }
-    }
 
 
 }
+    
+
+
+

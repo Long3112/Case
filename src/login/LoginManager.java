@@ -1,6 +1,7 @@
 package login;
 
 import model.Login;
+import model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ public class LoginManager {
 
 
     List<Login> logins = new ArrayList<>();
-
+    List<Student> students = new ArrayList<>();
 
     public void registerStudent() {
         Scanner scanner = new Scanner(System.in);
@@ -23,6 +24,7 @@ public class LoginManager {
         Login login = new Login();
         login.setStudentUsernames(username);
         login.setStudentPasswords(password);
+
         logins.add(login);
         System.out.println("Registration successful");
 
